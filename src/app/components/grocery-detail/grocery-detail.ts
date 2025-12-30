@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { routes } from './../../app.routes';
 import { Grocery, GroceryService } from './../../services/grocery';
 import { Component, OnInit } from '@angular/core';
@@ -5,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-grocery-detail',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './grocery-detail.html',
   styleUrls: ['./grocery-detail.scss'],
   standalone: true

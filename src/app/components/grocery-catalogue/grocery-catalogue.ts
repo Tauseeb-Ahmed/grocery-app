@@ -23,7 +23,7 @@ export class GroceryCatalogue {
     this.groceries = this.groceryService.groceries;
   }
 
-  addGrocery(item : Grocery){
+  addGrocery(item : Omit<Grocery, 'id'>){
     this.groceryService.addGrocery(item);
   }
 
@@ -40,6 +40,7 @@ newImage = '';
 
   onAdd() {
   this.addGrocery({
+
     name: this.newName,
     quantity: this.newQuantity,
     image: this.newImage

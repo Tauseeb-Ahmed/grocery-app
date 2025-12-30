@@ -1,7 +1,7 @@
 import { routes } from './../../app.routes';
 import { Grocery, GroceryService } from './../../services/grocery';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute , Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-grocery-detail',
@@ -17,17 +17,26 @@ export class GroceryDetail implements OnInit {
     private route: ActivatedRoute,
     private groceryService: GroceryService,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    const idParam = this.route.snapshot.paramMap.get('id');
+    const id = Number(idParam);
 
-    const name = this.route.snapshot.paramMap.get('name');
-    if (name) {
-      this.grocery = this.groceryService.getGroceryByName(name)!;
+    if (!isNaN(id)) {
+      const found = this.groceryService.getGroceryById(id);
+      if (found) {
+        this.grocery = found;
+        return;
+      }
     }
+
+    // fallback: invalid or missing item
+    this.router.navigate(['/']);
   }
 
-  goBack(){
+
+  goBack() {
     this.router.navigate(['/']);
   }
 }

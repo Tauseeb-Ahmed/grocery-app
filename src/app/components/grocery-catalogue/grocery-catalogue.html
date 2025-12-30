@@ -1,0 +1,34 @@
+<section class='catalogue'>
+    <app-grocery-card
+        *ngFor = "let item of groceries()"
+        [grocery] = 'item'
+        (removeGrocery)="removeGrocery($event)">
+    </app-grocery-card>
+
+</section>
+
+<form (ngSubmit)="onAdd()">
+  <input
+    type="text"
+    placeholder="Name"
+    [(ngModel)]="newName"
+    name="name"
+    required
+  />
+
+  <input
+    type="number"
+    [(ngModel)]="newQuantity"
+    name="quantity"
+    min="1"
+  />
+
+  <input
+    type="text"
+    placeholder="Image URL"
+    [(ngModel)]="newImage"
+    name="image"
+  />
+
+  <button type="submit">Add Grocery</button>
+</form>

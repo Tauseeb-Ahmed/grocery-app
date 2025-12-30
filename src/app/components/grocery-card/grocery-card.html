@@ -1,0 +1,10 @@
+<div class="grocery-item">
+  <img [src]="grocery.image" [alt]="grocery.name" />
+  <h3>
+    <a [routerLink]="['/grocery', grocery.name]">{{ grocery.name }}</a>
+  </h3>
+
+  <p>Quantity: {{ grocery.quantity }}</p>
+
+  <button (click) ="removeGrocery.emit(grocery)">Remove</button>
+</div>

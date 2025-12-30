@@ -1,0 +1,10 @@
+.grocery-item a {
+  display: block;
+  margin-top: 0.5rem;
+  color: #007bff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

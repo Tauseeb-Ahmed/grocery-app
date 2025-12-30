@@ -1,7 +1,7 @@
 <div class="grocery-item">
   <img [src]="grocery.image" [alt]="grocery.name" />
   <h3>
-    <a [routerLink]="['/grocery', grocery.name]">{{ grocery.name }}</a>
+    <a [routerLink]="['/grocery', grocery.id]">{{ grocery.name }}</a>
   </h3>
 
   <p>Quantity: {{ grocery.quantity }}</p>

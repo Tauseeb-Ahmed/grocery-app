@@ -5,7 +5,7 @@ import { GroceryDetail } from './components/grocery-detail/grocery-detail';
 
 export const routes: Routes = [
     {path: '',component:GroceryCatalogue},
-    {path: 'grocery/:name' , component : GroceryDetail}
+    {path: 'grocery/:id' , component : GroceryDetail}
 ];
 
 
